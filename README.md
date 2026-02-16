@@ -162,15 +162,25 @@ This structure ensures:
 
 ---
 
-## Demo Video
+## Video Demonstration
 
+The following video demonstrates the full application workflow:
+
+- Login and registration  
+- Emergency access  
+- Trusted contacts  
+- Caregiver management  
+- Medication reminders  
+
+🎥 Download the full demo video below:
+
+[Download Senior Connect & Safety+ Demo (sscdemo.mp4)](sscdemo.mp4)
 <p align="center">
-  <a href="PASTE_YOUTUBE_LINK_HERE">
-    <img src="sscmainscreen.png" width="300"/>
+  <a href="sscdemo.mp4">
+    <img src="sscmainscreen.png" width="350"/>
   </a>
 </p>
 
-Click the image above to watch the demo.
 
 
 ---
