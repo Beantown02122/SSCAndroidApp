@@ -1,224 +1,208 @@
 # Senior Connect & Safety+
-Android Safety & Communication Application (Offline-First)
 
-## Project Overview
-Senior Connect & Safety+ is a mobile application designed to support older adults with emergency readiness, caregiver communication, and medication reminders.
+![Platform](https://img.shields.io/badge/Platform-Android-green)
+![Language](https://img.shields.io/badge/Language-Kotlin-purple)
+![Architecture](https://img.shields.io/badge/Architecture-MVVM-blue)
+![Database](https://img.shields.io/badge/Database-Room-orange)
+![Min API](https://img.shields.io/badge/Min%20API-27-red)
 
-The app focuses on accessibility, simple navigation, and reliable local data storage. It uses a structured Android architecture with lifecycle-aware components.
+Secure Android Safety & Communication Application
 
 ---
 
-## Core Features
+## Overview
+
+Senior Connect & Safety+ is a structured Android application designed to support older adults with:
+
+• Emergency readiness  
+• Caregiver communication  
+• Medication management  
+
+The application prioritizes accessibility, reliability, and secure local data persistence.  
+It is built using modern Android architecture principles and lifecycle-aware components.
+
+---
+
+## Key Features
 
 ### Emergency Access
-- One-tap 911 access
-- Optional caregiver call
+- One-tap 911 calling
+- Optional caregiver quick-call
 - Minimal navigation depth for urgent use
-- Back navigation for controlled flow
+- Clear, large-button interface
 
-### Trusted Contacts Management
+### Trusted Contacts
 - Add, edit, delete contacts
-- Fields: name, phone number, relationship
-- Live-updating list (RecyclerView)
-- Confirmation dialogs to prevent accidental changes
+- Live RecyclerView updates
+- Confirmation dialogs for edits
+- Structured local storage
 
 ### Caregiver Management
 - Multiple caregiver profiles
 - SMS and call preference options
-- Quick-call functionality
-- List management with delete controls
+- Immediate call access
+- Persistent data storage
 
 ### Medication Reminders
-- Create and manage reminder entries
-- Persistent local storage
-- Immediate UI updates
+- Create and manage reminders
+- Title, time, and notes fields
+- Immediate UI refresh
 - Edit and delete functionality
 
 ---
 
-## Technical Architecture
-- Language: Kotlin
-- Architecture Pattern: MVVM
-- State Management: ViewModel + LiveData
-- Local Persistence: Room Database
-- UI Framework: Material Design Components
-- Minimum API Level: 27
-- Recommended API: 30–34
+## Technical Stack
 
-Separation of concerns:
-- UI layer renders screens and handles interaction
-- ViewModel layer holds state and business logic
-- Data layer persists information using Room (Entity + DAO + Database)
+- Kotlin
+- MVVM Architecture
+- ViewModel + LiveData
+- Room Database
+- RecyclerView
+- Material Design Components
+- Offline-first design
 
----
-
-## Architecture Diagram
-
-### High-Level MVVM Flow (ASCII)
-
-User
-  |
-  v
-UI (Activity/Fragment + XML)
-  |
-  v
-ViewModel (LiveData)
-  |
-  v
-Repository (optional)
-  |
-  v
-Room (DAO -> SQLite)
-  ^
-  |
-LiveData updates UI
+Minimum API: 27  
+Recommended API: 30–34  
 
 ---
 
-## Data Flow
-User Action
-→ UI Event
-→ ViewModel Processing
-→ Room Database Operation
-→ LiveData Update
-→ UI Refresh
+## Architecture Overview
 
----
+The application follows clean architectural separation:
 
-## Database Schema
+UI Layer  
+↓  
+ViewModel  
+↓  
+Repository  
+↓  
+Room Database  
 
-This project uses Room to store data locally. Typical tables include:
+This structure ensures:
 
-Contacts
-- id (PK)
-- name
-- phone
-- relationship
-
-Caregivers
-- id (PK)
-- name
-- phone
-- relationship
-- smsEnabled (boolean)
-- callEnabled (boolean)
-
-MedicationReminders
-- id (PK)
-- title
-- time
-- notes
-
-If your actual Entity field names differ, keep the concept but update the column names to match your code.
-
----
-
-## Security and Stability Practices
-- Input validation on user forms
-- Confirmation dialogs for destructive actions
-- Offline-first design with local storage
-- Lifecycle-aware state to reduce crashes during configuration changes
-
-If you want to claim stronger security (encryption, auth hardening), you need to implement and document it.
-
----
-
-## Application Structure
-The project contains:
-- Kotlin source files
-- Room entities and DAO interfaces
-- ViewModels
-- RecyclerView adapters
-- XML layout resources
-- Gradle build configuration
-
-No third-party libraries are required beyond standard Android components.
-
----
-
-## User Flow
-From the home screen, users can access:
-- Emergency Access
-- Trusted Contacts
-- Caregiver Management
-- Medication Reminders
-
-Each module is reachable through clear, controlled navigation.
+- Clear separation of concerns  
+- Lifecycle safety  
+- State preservation  
+- Improved testability  
+- Reduced memory leaks  
 
 ---
 
 ## Application Screenshots
 
-Place these image files in the repository root (same folder as this README),
-or update the paths below to match your project.
-
 ### App Icon
-![App Icon](ssc_icon.png)
 
-### Login Screen
-![Login Screen](sscloginsucces.png)
-
-### Main Dashboard
-![Main Screen](sscmainscreen.png)
-
-### Emergency Screen
-![Emergency Screen](sscemergencyscrren.png)
-
-### Caregiver Management
-
-Add Caregiver
-![Caregiver Entry](ssccaregiverscreen1.png)
-
-Saved Caregivers List
-![Saved Caregivers](ssccaregiverscreensaved caregivers.png)
-
-### Trusted Contacts
-
-Add Contact
-![Trusted Contact Screen](ssctrustedcontactscreen.png)
-
-Edit Confirmation Dialog
-![Save Changes Dialog](ssctrustedcontactsavechangesconfirm.png)
-
-### Medication Reminders
-
-Create Reminder
-![Medication Entry](sscmedicationreminder.png)
-
-Reminder Saved
-![Medication Saved](sscmedicationremindersaved.png)
-
-Reminder List View
-![Medication List](sscmedicationreminderwithlist.png)
+<p align="center">
+  <img src="ssc_icon.png" width="160"/>
+</p>
 
 ---
 
-## Build and Run
+### Login Screen
 
-1. Open Android Studio
-2. Select "Open Existing Project"
-3. Choose the project folder (SeniorConnectSafetyPlus)
-4. Allow Gradle to sync
-5. Select an emulator or device running API 27+
-6. Press Run
+<p align="center">
+  <img src="sscloginsucces.png" width="260"/>
+</p>
+
+---
+
+### Main Dashboard
+
+<p align="center">
+  <img src="sscmainscreen.png" width="260"/>
+</p>
+
+---
+
+### Emergency Module
+
+<p align="center">
+  <img src="sscemergencyscrren.png" width="260"/>
+</p>
+
+---
+
+### Caregiver Management
+
+<p align="center">
+  <img src="ssccaregiverscreen1.png" width="250"/>
+  <img src="ssccaregiverscreensaved caregivers.png" width="250"/>
+</p>
+
+---
+
+### Trusted Contacts
+
+<p align="center">
+  <img src="ssctrustedcontactscreen.png" width="250"/>
+  <img src="ssctrustedcontact.png" width="250"/>
+  <img src="ssctrustedcontactsavechangesconfirm.png" width="250"/>
+</p>
+
+---
+
+### Medication Reminders
+
+<p align="center">
+  <img src="sscmedicationreminder.png" width="250"/>
+  <img src="sscmedicationremindersaved.png" width="250"/>
+  <img src="sscmedicationreminderwithlist.png" width="250"/>
+</p>
+
+---
+
+## Security & Stability
+
+- Input validation on all forms  
+- Confirmation dialogs for destructive actions  
+- Structured navigation arguments  
+- Offline data persistence  
+- Safe handling of configuration changes  
+- Lifecycle-aware components  
+
+---
+
+## Demo Video
+
+<p align="center">
+  <a href="PASTE_YOUTUBE_LINK_HERE">
+    <img src="sscmainscreen.png" width="300"/>
+  </a>
+</p>
+
+Click the image above to watch the demo.
+
+
+---
+
+## Build Instructions
+
+1. Open Android Studio  
+2. Select “Open Existing Project”  
+3. Choose project folder  
+4. Allow Gradle sync  
+5. Run on emulator/device API 27+  
+
+No external third-party libraries required.
 
 ---
 
 ## Skills Demonstrated
-- Android application development
-- Kotlin programming
-- MVVM architecture implementation
-- Room database design
-- Accessibility-focused UI design
-- Local data persistence
-- State management with LiveData
+
+- Android Application Development  
+- Kotlin Programming  
+- MVVM Architecture Implementation  
+- Room Database Integration  
+- RecyclerView Implementation  
+- State Management  
+- UI/UX Accessibility Design  
+- Offline-first Application Design  
+- Mobile App Testing  
 
 ---
 
-## Roadmap (Future Improvements)
-- Add scheduled notification alarms for medication reminders (AlarmManager or WorkManager)
-- Add emergency contact customization (choose primary caregiver)
-- Add stronger data protection (encrypted storage for sensitive fields)
-- Improve form validation (phone formatting, required fields, error messages)
-- Add basic UI testing (Espresso) and ViewModel unit tests
-- Add accessibility checks (TalkBack labels, larger text scaling)
+## Project Impact
+
+Senior Connect & Safety+ demonstrates the ability to design and implement a structured Android application using modern architecture patterns.
+
+The project focuses on usability, reliability, and maintainable code structure suitable for real-world deployment scenarios.
